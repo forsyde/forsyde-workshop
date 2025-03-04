@@ -13,10 +13,10 @@ s_1 = signal [Up, Up, Up, Reset, Up]
 
 -- Step 1: Create Netlist
 counter :: Signal Direction -> Signal Integer
-counter dir = out where
-  nextstate = p_1 state dir 
-  state     = p_2 nextstate
-  out       = p_3 state dir 
+counter s_in = s_out where
+  s_nextstate = p_1 s_state s_in  
+  s_state     = p_2 s_nextstate
+  s_out       = p_3 s_state s_in 
 
 -- Step 2: Create Processes with Process Constructors
 p_1 :: Signal Integer -> Signal Direction -> Signal Integer
