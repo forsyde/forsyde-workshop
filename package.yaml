@@ -1,0 +1,60 @@
+name:                forsyde-workshop
+version:             0.1.0.0
+github:              "ingo-sander/forsyde-workshop"
+license:             BSD-3-Clause
+author:              "Ingo Sander"
+maintainer:          "ingo@kth.se"
+copyright:           "Ingo Sander"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/ingo-sander/forsyde-workshop#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- forsyde-shallow >= 3.5.0.0
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  forsyde-workshop-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - forsyde-workshop
+
+tests:
+  forsyde-workshop-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - forsyde-workshop
