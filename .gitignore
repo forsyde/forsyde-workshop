@@ -24,3 +24,5 @@ cabal.project.local~
 /forsyde-workshop.cabal
 *.lock
 *~
+/report.html
+*.bkp
